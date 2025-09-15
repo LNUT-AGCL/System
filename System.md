@@ -21,19 +21,19 @@
 ------
 # 2. Virtual Environments
 ## python environment
-python使用virtualenv创建虚拟环境，不建议使用conda，conda会抢占本机原生python环境，影响ros使用
-> 使用virtualenv / env 创建虚拟环境并链接本机的torch、tensorrt、rospy
+python使用virtualenv / venv创建虚拟环境，不建议使用conda，conda会抢占本机原生python环境，影响ros使用
+> 使用virtualenv / venv 创建虚拟环境并链接本机的torch、tensorrt、rospy
 >
 > > python3 -m venv <name> --system-site-packages --symlinks
 > > 在使用ros时需要修改setup.cfg文件，添加配置
 > >
-> > ```shell
+> > ```bash
 > > # src/{node}/setup.cfg
 > > [build_scripts]
 > > executable = /usr/bin/env python3
 > > ```
 > > 激活虚拟环境和关闭虚拟环境
-> > ```shell
+> > ```bash
 > > source <name>/bin/activate
 > > deactivate
 > > ```
@@ -45,7 +45,7 @@ python使用virtualenv创建虚拟环境，不建议使用conda，conda会抢占
 docker pull <image_name>:version
 ```
 2. docker 容器构建
-```shell
+```bash
 docker run -it \
 	--privileged
 	--name <container_name> \
@@ -58,7 +58,7 @@ docker run -it \
 	<images_name>:version /bin/bash
 ```
 3. container使用
-```shell
+```bash
 docker start <container_name>				# 启动container
 docker stop <conatiner_name>				# 关闭container
 docker restart <container_name>				# 重启container
@@ -67,3 +67,8 @@ docker exec -it <container_name> /bin/bash	# 以bash方式进入container
 
 # 3. Git
 ## TODO 创建实验室Git托管平台
+1. git 代码上传，使用者使用git上传自己的修改，并附上个人ID和修改内容
+```bash
+git add .
+git commit --author="name <email>" -m "提交信息"
+```
