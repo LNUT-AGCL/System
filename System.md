@@ -3,10 +3,10 @@
 |  | name |
 | :---: | :---: |
 | ***CPU*** | Intel Core i9 12900K |
-| ***Memory*** | 32GB |
+| ***Memory*** | 64GB |
 | ***GPU*** | NVIDIA RTX 3080Ti 12GB |
 | ***Storage*** | 1TB SSD + 2TB HDD |
-> 2TB HDD 挂载在 /media/lnut 下，作为双系统的共享数据盘
+> 2TB HDD 挂载在 /media/lnut 下(/media/lnut/Shared)，作为双系统的共享数据盘
 ## software
 |  | version |
 | :---: | :---: |
@@ -41,7 +41,7 @@ python使用virtualenv / venv创建虚拟环境，不建议使用conda，conda�
 ## docker environment
 使用 docker 进行本机环境管理
 1. docker 镜像的拉取
-```shell
+```bash
 docker pull <image_name>:version
 ```
 2. docker 容器构建
@@ -63,6 +63,13 @@ docker start <container_name>				# 启动container
 docker stop <conatiner_name>				# 关闭container
 docker restart <container_name>				# 重启container
 docker exec -it <container_name> /bin/bash	# 以bash方式进入container
+```
+4. Jetson-container (Jetson专属)
+jetson中镜像严格依赖l4t版本，不允许跨系统跨代使用镜像中的cuda
+> https://github.com/dusty-nv/jetson-containers.git
+```bash
+jetson-containers run $(autotag l4t-pytorch)	# pull and build a l4t-pytorch image
+jetson-containers build --name=my_container pytorch transformers ros:humble-desktop		# build an image with ROS2, pytorch and transformers
 ```
 
 # 3. Git
