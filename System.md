@@ -1,22 +1,22 @@
 # 1. Server configuration
 ## hardware
-|  | name |
-| :---: | :---: |
-| ***CPU*** | Intel Core i9 12900K |
-| ***Memory*** | 64GB |
-| ***GPU*** | NVIDIA RTX 3080Ti 12GB |
-| ***Storage*** | 1TB SSD + 2TB HDD |
+|               |          name          |
+| :-----------: | :--------------------: |
+|   ***CPU***   |  Intel Core i9 12900K  |
+| ***Memory***  |          64GB          |
+|   ***GPU***   | NVIDIA RTX 3080Ti 12GB |
+| ***Storage*** |   1TB SSD + 2TB HDD    |
 > 2TB HDD 挂载在 /media/lnut 下(/media/lnut/Shared)，作为双系统的共享数据盘
 ## software
-|  | version |
-| :---: | :---: |
-| System | Ubuntu22.04 (linux kernal 5.15) |
-| CUDA | 12.6 |
-| TensorRT | 10.3 |
-| Python | 3.10 |
-| ROS | humble、noetic |
-| docker | 28.3.3 |
-| nvidia-container-toolkit | 1.17.8 |
+|                          |             version             |
+| :----------------------: | :-----------------------------: |
+|          System          | Ubuntu22.04 (linux kernal 5.15) |
+|           CUDA           |              12.6               |
+|         TensorRT         |              10.3               |
+|          Python          |              3.10               |
+|           ROS            |         humble、noetic          |
+|          docker          |             28.3.3              |
+| nvidia-container-toolkit |             1.17.8              |
 ### terminal
 本机安装双版本ROS,在新建终端时需要根据提示选择对应的ROS版本</br>
 1. ~/.bashrc 中部分配置文件如下：
